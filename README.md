@@ -4,6 +4,15 @@ Herein lies the config for my self-built Voron 2.4.
 
 Below is extra steps for setup.
 
+## Auto-Z calibration
+
+https://github.com/protoloft/klipper_z_calibration/wiki/How-To-Use-It
+
+Run `CALIBRATE_Z` to find the actual Z offset.
+
+To figure out the switch_offset, do the paper level test, then run;
+`CALCULATE_SWITCH_OFFSET`
+
 ## Quad gantry leveling
 
 https://docs.vorondesign.com/build/startup/#quad-gantry-level-v2
