@@ -64,3 +64,12 @@ To get a graph, run:
 ./scripts/calibrate_shaper.py /tmp/calibration_data_x_*.csv -o ~/printer_data/config/shaper_calibrate_x.png
 ./scripts/calibrate_shaper.py /tmp/calibration_data_y_*.csv -o ~/printer_data/config/shaper_calibrate_y.png
 ```
+
+## tmc setter autotune
+
+https://github.com/andrewmcgr/klipper_tmc_autotune
+
+`AUTOTUNE_TMC STEPPER=<name> [PARAMETER=<value>]`
+
+e.g.:
+`AUTOTUNE_TMC STEPPER=stepper_x tuning_goal=silent`
