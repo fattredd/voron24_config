@@ -4,6 +4,13 @@ Herein lies the config for my self-built Voron 2.4.
 
 Below is extra steps for setup.
 
+## Quad gantry leveling
+
+https://docs.vorondesign.com/build/startup/#quad-gantry-level-v2
+
+`PROBE_ACCURACY`
+`QUAD_GANTRY_LEVEL`
+
 ## Input Shaping Setup:
 
 https://www.klipper3d.org/RPi_microcontroller.html
@@ -40,7 +47,7 @@ ACCELEROMETER_QUERY # Takes a sensor reading. Useful to ensure the sensor is ali
 SHAPER_CALIBRATE # Calibrate X & Y
 
 TEST_RESONANCES AXIS=X # Calibrate just X
-TEST_RESONANCES AXIS=Y
+TEST_RESONANCES AXIS=Y # Calibrate just Y
 ```
 
 To get a graph, run:
