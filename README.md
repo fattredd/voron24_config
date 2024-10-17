@@ -4,6 +4,17 @@ Herein lies the config for my self-built Voron 2.4.
 
 Below is extra steps for setup.
 
+## Set vars during runtime
+
+```
+# Temporarily change a variable (reset on restart)
+SET_GCODE_VARIABLE MACRO=_USER_VARIABLES_OTHER VARIABLE=force_homing_in_start_print VALUE=False
+
+# Save a var locally
+SAVE_VARIABLE VARIABLE=temperature_target VALUE={TARGET_TEMP}
+```
+
+
 ## Auto-Z calibration
 
 https://github.com/protoloft/klipper_z_calibration/wiki/How-To-Use-It
