@@ -14,8 +14,15 @@ SET_GCODE_VARIABLE MACRO=_USER_VARIABLES_OTHER VARIABLE=force_homing_in_start_pr
 SAVE_VARIABLE VARIABLE=temperature_target VALUE={TARGET_TEMP}
 ```
 
+## Filter monitoring
 
-## Auto-Z calibration
+Check the status of the filter:
+`QUERY_FILTER EXTENDED=True`
+
+Reset the filter:
+`FILTER_RESET`
+
+## Auto-Z calibration (removed)
 
 https://github.com/protoloft/klipper_z_calibration/wiki/How-To-Use-It
 
