@@ -4,6 +4,17 @@ Herein lies the config for my self-built Voron 2.4.
 
 Below is extra steps for setup.
 
+## PID Tuning
+
+Be sure to turn on the filter fan before bed tuning:
+```
+START_FILTER SPEED=1
+PID_CALIBRATE HEATER=heater_bed TARGET=100
+STOP_FILTER
+
+PID_CALIBRATE HEATER=extruder TARGET=245
+```
+
 ## Set vars during runtime
 
 ```
