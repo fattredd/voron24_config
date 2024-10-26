@@ -1,5 +1,5 @@
 [z_calibration]
-nozzle_xy_position: 208,300
+nozzle_xy_position: 203,299
 #   A X, Y coordinate (e.g. 100,100) of the nozzle, clicking on the z endstop.
 switch_xy_position: 205,279
 #   A X, Y coordinate (e.g. 100,100) of the probe's switch body, clicking on
