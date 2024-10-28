@@ -102,3 +102,11 @@ https://github.com/andrewmcgr/klipper_tmc_autotune
 
 e.g.:
 `AUTOTUNE_TMC STEPPER=stepper_x tuning_goal=silent`
+
+## Maintanence
+
+https://3dcoded.github.io/KlipperMaintenance/gcodes/
+
+- `MAINTAIN_STATUS` Shows the current maintenance status
+- `CHECK_MAINTENANCE NAME=airfilter` Shows a specific maintenance item
+- `UPDATE_MAINTENANCE NAME=airfilter` Sets the last maintenance time to now
