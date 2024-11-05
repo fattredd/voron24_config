@@ -22,6 +22,7 @@ if [ $use_existing -eq 0 ]; then
   echo "Using existing calibration data" | tee -a ${file}
 else
   ls /tmp/calibration_data_*.csv >> ${file}
+  rm ${cur_dir}/shaper_calibration_data_x.csv ${cur_dir}/shaper_calibration_data_y.csv || true
   cat /tmp/calibration_data_x_*.csv > ${cur_dir}/shaper_calibration_data_x.csv
   cat /tmp/calibration_data_y_*.csv > ${cur_dir}/shaper_calibration_data_y.csv
 fi
@@ -34,6 +35,6 @@ echo -e "\nY axis:" | tee -a ${file}
 ~/klipper/scripts/calibrate_shaper.py ${cur_dir}/shaper_calibration_data_y.csv -o ${cur_dir}/shaper_calibrate_y.png | tee -a ${file}
 
 
-if [ $use_existing -eq 0 ]; then
+if [ $use_existing -eq 1 ]; then
   rm /tmp/calibration_data_*.csv
 fi

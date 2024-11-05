@@ -90,7 +90,7 @@ TEST_RESONANCES AXIS=Y # Calibrate just Y
 
 To get a graph, run:
 ```
-./data/input_shape_calibrate.sh
+./data/shaper_parse.sh
 ```
 
 ## tmc setter autotune
