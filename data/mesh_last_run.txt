@@ -1,0 +1,7 @@
+Mesh data:
+Last run: Tue  5 Nov 16:52:39 EST 2024
+Mesh name: default_bed
+
+plot output: Tue  5 Nov 16:52:39 EST 2024
+Connecting to Unix Socket File '/home/ash/printer_data/comms/klippy.sock'
+Connected

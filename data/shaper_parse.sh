@@ -14,6 +14,14 @@ if [ $# -ne 1 ]; then
   fi
 fi
 
+if ! [ -d "${cur_dir}/shaper.venv" ]; then
+  python3 -m venv "${cur_dir}/shaper.venv"
+  source "${cur_dir}/shaper.venv/bin/activate"
+  pip install matplotlib numpy &> /dev/null
+else
+  source "${cur_dir}/mesh.venv/bin/activate"
+fi
+
 file="${cur_dir}/shaper_last_run.txt"
 echo "Calibration data:" | tee ${file}
 echo "Last run: $(date)" | tee -a ${file}
