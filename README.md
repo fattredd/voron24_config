@@ -109,3 +109,7 @@ https://3dcoded.github.io/KlipperMaintenance/gcodes/
 - `MAINTAIN_STATUS` Shows the current maintenance status
 - `CHECK_MAINTENANCE NAME=airfilter` Shows a specific maintenance item
 - `UPDATE_MAINTENANCE NAME=airfilter` Sets the last maintenance time to now
+
+# Cartographer
+
+[Config](https://docs.cartographer3d.com/cartographer-probe/installation-and-setup/installation/calibration)
