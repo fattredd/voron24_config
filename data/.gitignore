@@ -1,2 +1,4 @@
 *filter.csv
 *.venv/
+_printer_data/
+_simple_logs/

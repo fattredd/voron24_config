@@ -19,7 +19,7 @@ if ! [ -d "${cur_dir}/shaper.venv" ]; then
   source "${cur_dir}/shaper.venv/bin/activate"
   pip install matplotlib numpy &> /dev/null
 else
-  source "${cur_dir}/mesh.venv/bin/activate"
+  source "${cur_dir}/shaper.venv/bin/activate"
 fi
 
 file="${cur_dir}/shaper_last_run.txt"
