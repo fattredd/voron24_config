@@ -11,12 +11,15 @@ if [ $# -gt 0 ]; then
   mesh_name="$@"
 fi
 
-if ! [ -d "${cur_dir}/mesh.venv" ]; then
-  python3 -m venv "${cur_dir}/mesh.venv"
-  source "${cur_dir}/mesh.venv/bin/activate"
+# Create a virtenv
+venv_name=".venv"
+if ! [ -d "${cur_dir}/${venv_name}" ]; then
+  python3 -m venv "${cur_dir}/${venv_name}"
+  source "${cur_dir}/${venv_name}/bin/activate"
+  pip install --upgrade pip &> /dev/null
   pip install matplotlib numpy websockets &> /dev/null
 else
-  source "${cur_dir}/mesh.venv/bin/activate"
+  source "${cur_dir}/${venv_name}/bin/activate"
 fi
 
 file="${cur_dir}/mesh_last_run.txt"

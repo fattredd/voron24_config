@@ -20,12 +20,12 @@ if [ ! -f "$log_path" ]; then
 fi
 
 # Create a virtenv
-venv_name="logs.venv"
+venv_name=".venv"
 if ! [ -d "${cur_dir}/${venv_name}" ]; then
   python3 -m venv "${cur_dir}/${venv_name}"
   source "${cur_dir}/${venv_name}/bin/activate"
-  pip install --upgrade pip #&> /dev/null
-  pip install matplotlib #&> /dev/null
+  pip install --upgrade pip &> /dev/null
+  pip install matplotlib &> /dev/null
 else
   source "${cur_dir}/${venv_name}/bin/activate"
 fi

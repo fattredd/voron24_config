@@ -14,12 +14,15 @@ if [ $# -ne 1 ]; then
   fi
 fi
 
-if ! [ -d "${cur_dir}/shaper.venv" ]; then
-  python3 -m venv "${cur_dir}/shaper.venv"
-  source "${cur_dir}/shaper.venv/bin/activate"
+# Create a virtenv
+venv_name=".venv"
+if ! [ -d "${cur_dir}/${venv_name}" ]; then
+  python3 -m venv "${cur_dir}/${venv_name}"
+  source "${cur_dir}/${venv_name}/bin/activate"
+  pip install --upgrade pip &> /dev/null
   pip install matplotlib numpy &> /dev/null
 else
-  source "${cur_dir}/shaper.venv/bin/activate"
+  source "${cur_dir}/${venv_name}/bin/activate"
 fi
 
 file="${cur_dir}/shaper_last_run.txt"
