@@ -2,7 +2,7 @@
 
 set -e
 
-mv ~/klipper/data1 ~/klipper/data2 ~/klipper/data3 ~/cartographer-klipper/
+mv /tmp/data* ~/cartographer-klipper/
 
 pushd ~/cartographer-klipper &> /dev/null
   ~/klippy-env/bin/python tempcalib.py
