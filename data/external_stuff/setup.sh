@@ -79,6 +79,9 @@ sudo mkdir -p /etc/systemd/system/klipper.service.d
 sudo ln -sf ${cur_dir}/cpuaffinity.conf /etc/systemd/system.conf.d/cpuaffinity.conf
 sudo ln -sf ${cur_dir}/override.conf /etc/systemd/system/klipper.service.d/override.conf
 
+# Disable usb suspend
+sudo ln -sf ${cur_dir}/disable-usb-autosuspend.conf /etc/modprobe.d/disable-usb-autosuspend.conf
+
 # Easy access to printer data not in this repo
 # mkdir -p ${cur_dir}/../_printer_data/
 # function symlink_printer_data {
