@@ -54,7 +54,7 @@
 
 [led_effect sb_logo_busy]
 autostart: false
-frame_rate: 12
+frame_rate: 10
 leds:
   neopixel:sb_leds (1)
 layers:
@@ -63,7 +63,7 @@ layers:
 
 [led_effect sb_logo_cleaning]
 autostart: false
-frame_rate: 12
+frame_rate: 10
 leds:
   neopixel:sb_leds (1)
 layers:
@@ -72,7 +72,7 @@ layers:
 
 [led_effect sb_logo_calibrating_z]
 autostart: false
-frame_rate: 12
+frame_rate: 10
 leds:
   neopixel:sb_leds (1)
 layers:
@@ -83,7 +83,7 @@ layers:
 leds:
   neopixel:sb_leds (1)
 autostart: false
-frame_rate: 12
+frame_rate: 10
 layers:
   # red, orange fade
   gradient 0.50 1.0 top (1.0, 0.0, 0.0), (1.0, 0.50, 0.0)
@@ -92,14 +92,14 @@ layers:
 leds:
   neopixel:sb_leds (1)
 autostart: false
-frame_rate: 12
+frame_rate: 10
 layers:
   # red, cyan fade
   gradient 0.50 1.0 top (1.0, 0.0, 0.0), (0.0, 1.0, 1.0)
 
 [led_effect sb_logo_homing]
 autostart: false
-frame_rate: 12
+frame_rate: 10
 leds:
   neopixel:sb_leds (1)
 layers:
@@ -108,7 +108,7 @@ layers:
 
 [led_effect sb_logo_leveling]
 autostart: false
-frame_rate: 12
+frame_rate: 10
 leds:
   neopixel:sb_leds (1)
 layers:
@@ -118,7 +118,7 @@ layers:
 
 [led_effect sb_logo_meshing]
 autostart: false
-frame_rate: 12
+frame_rate: 10
 leds:
   neopixel:sb_leds (1)
 layers:
@@ -127,7 +127,7 @@ layers:
 
 [led_effect sb_logo_printing]
 autostart: false
-frame_rate: 12
+frame_rate: 10
 leds:
   neopixel:sb_leds (1)
 layers:
@@ -136,7 +136,7 @@ layers:
 
 [led_effect sb_logo_paused]
 autostart: false
-frame_rate: 12
+frame_rate: 10
 leds:
   neopixel:sb_leds (1)
 layers:
@@ -147,7 +147,7 @@ layers:
 
 [led_effect sb_logo_part_ready]
 autostart: false
-frame_rate: 12
+frame_rate: 10
 leds:
   neopixel:sb_leds (1)
 layers:
@@ -156,7 +156,7 @@ layers:
 
 [led_effect sb_logo_filter_warning]
 autostart: false
-frame_rate: 12
+frame_rate: 10
 leds:
   neopixel:sb_leds (1)
 layers:
@@ -167,7 +167,7 @@ layers:
 [led_effect sb_logo_homing_endstop]
 endstops: x, y, z
 autostart: true
-frame_rate: 12
+frame_rate: 10
 leds:
   neopixel:sb_leds (1)
 layers:
@@ -181,7 +181,7 @@ layers:
 
 [led_effect sb_nozzle_heating]
 autostart: false
-frame_rate: 12
+frame_rate: 10
 leds:
   neopixel:sb_leds (2,3)
 layers:
@@ -190,7 +190,7 @@ layers:
 
 [led_effect sb_nozzle_cooling]
 autostart: false
-frame_rate: 12
+frame_rate: 10
 leds:
   neopixel:sb_leds (2,3)
 layers:
@@ -200,7 +200,7 @@ layers:
 
 [led_effect sb_nozzle_part_ready]
 autostart: false
-frame_rate: 12
+frame_rate: 10
 leds:
   neopixel:sb_leds (2,3)
 layers:
@@ -220,14 +220,14 @@ layers:
   breathing      2  0     difference (0.0, 0.5, 0.0)
   static         1  0     top        (1.0, 0.0, 0.0)
 autostart: false
-frame_rate: 12
+frame_rate: 10
 run_on_error:                          true
 
 [led_effect rainbow]
 leds:
   neopixel:sb_leds
 autostart: true
-frame_rate: 12
+frame_rate: 10
 layers:
   linearfade 5 1 add (0.3, 0.0, 0.0), (0.0, 0.3, 0.0), (0.0, 0.0, 0.3)
 
@@ -240,7 +240,7 @@ leds:
   neopixel:sb_leds (2,3)
   #neopixel:caselight
 autostart: false
-frame_rate: 12
+frame_rate: 10
 layers:
   static         0  0     top        (0.0,  0.0, 0.0, 1.0)
 
@@ -248,7 +248,7 @@ layers:
 leds:
   neopixel:sb_leds (1)
 autostart: false
-frame_rate: 12
+frame_rate: 10
 layers:
   static         0  0     top        (1.0,  1.0, 1.0)
 
