@@ -4,6 +4,10 @@ Herein lies the config for my self-built Voron 2.4.
 
 Below is extra steps for setup.
 
+## Debugging
+
+[Analyze klippy.log](https://doctor-klipper.clmntw.fr/)
+
 ## PID Tuning
 
 Be sure to turn on the filter fan before bed tuning:
