@@ -102,3 +102,18 @@ sudo ln -sf ${cur_dir}/disable-usb-autosuspend.conf /etc/modprobe.d/disable-usb-
   ~/klippy-env/bin/pip install -v numpy
   ~/klippy-env/bin/pip install scipy
 }
+
+{
+  # Fix USB suspend issues
+  echo Y | sudo tee /sys/module/usbcore/parameters/old_scheme_first
+  echo -1 | sudo tee /sys/module/usbcore/parameters/autosuspend
+}
+
+# This will not currently work due to the way we Z-home. To make it work,
+# we'll need to place Z endstops on the gantry itself and home to max Z
+# {
+#   # power loss recovery
+#   # https://github.com/ankurv2k6/klipper-plr
+#   chmod 644 ${cur_dir}/power_loss_recovery.py
+#   ln -sf ${cur_dir}/power_loss_recovery.py ~/klipper/klippy/extras/power_loss_recovery.py
+# }
