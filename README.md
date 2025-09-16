@@ -117,3 +117,9 @@ https://3dcoded.github.io/KlipperMaintenance/gcodes/
 # Cartographer
 
 [Config](https://docs.cartographer3d.com/cartographer-probe/installation-and-setup/installation/calibration)
+
+# Canbus
+
+~/klippy-env/bin/python ~/klipper/scripts/canbus_query.py can0
+
+https://canbus.esoterical.online/

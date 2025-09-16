@@ -117,3 +117,16 @@ sudo ln -sf ${cur_dir}/disable-usb-autosuspend.conf /etc/modprobe.d/disable-usb-
 #   chmod 644 ${cur_dir}/power_loss_recovery.py
 #   ln -sf ${cur_dir}/power_loss_recovery.py ~/klipper/klippy/extras/power_loss_recovery.py
 # }
+
+{
+  # Canbus setup
+  #sudo ln -sf ${cur_dir}/can0 /etc/network/interfaces.d/can0
+  # ~/klippy-env/bin/python ~/klipper/scripts/canbus_query.py can0
+  sudo systemctl enable systemd-networkd
+  sudo systemctl start systemd-networkd
+  sudo systemctl disable systemd-networkd-wait-online.service
+  echo -e 'SUBSYSTEM=="net", ACTION=="change|add", KERNEL=="can*"  ATTR{tx_queue_len}="128"' | sudo tee /etc/udev/rules.d/10-can.rules > /dev/null
+  echo -e "[Match]\nName=can*\n\n[CAN]\nBitRate=1M\nRestartSec=0.1s\n\n[Link]\nRequiredForOnline=no" | sudo tee /etc/systemd/network/25-can.network > /dev/null
+  # cat /etc/systemd/network/25-can.network
+
+}
