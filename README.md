@@ -123,3 +123,9 @@ https://3dcoded.github.io/KlipperMaintenance/gcodes/
 ~/klippy-env/bin/python ~/klipper/scripts/canbus_query.py can0
 
 https://canbus.esoterical.online/
+
+# Forgot to add print pause
+
+`SET_PAUSE_AT_LAYER ENABLE=1 LAYER=15 MACRO=CHANGE_FILAMENT`
+or
+`SET_PAUSE_NEXT_LAYER ENABLE=1 MACRO=CHANGE_FILAMENT`
