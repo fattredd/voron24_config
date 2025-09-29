@@ -124,6 +124,9 @@ https://3dcoded.github.io/KlipperMaintenance/gcodes/
 
 https://canbus.esoterical.online/
 
+`CARTOGRAPHER_THRESHOLD_SCAN`
+`CATROGRAPHER_TOUCH`
+
 ## klipper updates
 
 When updating klipper, be sure to also update the canbus firmware:
