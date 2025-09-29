@@ -118,6 +118,22 @@ sudo ln -sf ${cur_dir}/disable-usb-autosuspend.conf /etc/modprobe.d/disable-usb-
 #   ln -sf ${cur_dir}/power_loss_recovery.py ~/klipper/klippy/extras/power_loss_recovery.py
 # }
 
+
+{ # Canbus bridge setup
+  #https://canbus.esoterical.online/can_adapter/BigTreeTech%20U2C%20v2.1/README.htmlq
+  cd ~/
+  wget https://github.com/Esoterical/voron_canbus/raw/main/can_adapter/BigTreeTech%20U2C%20v2.1/G0B1_U2C_V2.bin
+
+  # Put the canbus adapter into DFU mode
+  # Hold the BOOT button while plugging it in
+  sudo dfu-util -l | grep 'Internal Flash' || ( echo "Please put the canbus adapter into DFU mode by shorting the two pins on the back while plugging it in" && exit 1 )
+  # Flash the firmware
+  sudo dfu-util -D ~/G0B1_U2C_V2.bin -a 0 -s 0x08000000:leave
+
+  # Replug the canbus adapter and check it's there
+  #
+}
+
 {
   # Canbus setup
   #sudo ln -sf ${cur_dir}/can0 /etc/network/interfaces.d/can0
@@ -126,7 +142,15 @@ sudo ln -sf ${cur_dir}/disable-usb-autosuspend.conf /etc/modprobe.d/disable-usb-
   sudo systemctl start systemd-networkd
   sudo systemctl disable systemd-networkd-wait-online.service
   echo -e 'SUBSYSTEM=="net", ACTION=="change|add", KERNEL=="can*"  ATTR{tx_queue_len}="128"' | sudo tee /etc/udev/rules.d/10-can.rules > /dev/null
-  echo -e "[Match]\nName=can*\n\n[CAN]\nBitRate=1M\nRestartSec=0.1s\n\n[Link]\nRequiredForOnline=no" | sudo tee /etc/systemd/network/25-can.network > /dev/null
+  # cat /etc/udev/rules.d/10-can.rules
+  sudo udevadm control --reload-rules && sudo udevadm trigger
+  echo -e "[Match]\nName=can*\n\n[CAN]\nBitRate=1M\n#RestartSec=0.1s\n\n[Link]\nRequiredForOnline=no" | sudo tee /etc/systemd/network/25-can.network > /dev/null
   # cat /etc/systemd/network/25-can.network
-
+  sudo systemctl restart systemd-networkd
+  sleep 2
+  ip link show can0
+  sudo ip link set can0 up
+  sleep 2
+  ip -details link show can0
+  ~/klippy-env/bin/python ~/klipper/scripts/canbus_query.py can0
 }

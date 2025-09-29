@@ -124,6 +124,19 @@ https://3dcoded.github.io/KlipperMaintenance/gcodes/
 
 https://canbus.esoterical.online/
 
+## klipper updates
+
+When updating klipper, be sure to also update the canbus firmware:
+
+```
+cd ~/klipper/
+git pull
+make clean
+make menuconfig
+```
+
+data/external_stuff/update_canbus.sh
+
 # Forgot to add print pause
 
 `SET_PAUSE_AT_LAYER ENABLE=1 LAYER=15 MACRO=CHANGE_FILAMENT`
