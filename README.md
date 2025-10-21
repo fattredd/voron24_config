@@ -124,8 +124,20 @@ https://3dcoded.github.io/KlipperMaintenance/gcodes/
 
 https://canbus.esoterical.online/
 
+https://canbus.esoterical.online/mainboard_flashing/common_hardware/BigTreeTech%20Octopus/README.htmlca
+
 `CARTOGRAPHER_THRESHOLD_SCAN`
 `CATROGRAPHER_TOUCH`
+
+## saved menuconfig
+https://slawi.eu/posts/klipper_make_config/
+
+menuconfig for BigTreeTech Octopus CANBUS
+```
+cd ~/katapult
+cp .config config-octopus-canbus
+make KCONFIG_CONFIG=config-octopus-canbus
+```
 
 ## klipper updates
 
