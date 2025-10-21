@@ -157,3 +157,21 @@ data/external_stuff/update_canbus.sh
 `SET_PAUSE_AT_LAYER ENABLE=1 LAYER=15 MACRO=CHANGE_FILAMENT`
 or
 `SET_PAUSE_NEXT_LAYER ENABLE=1 MACRO=CHANGE_FILAMENT`
+
+# AFC
+
+Mainsail official is working on bringing AFC upstream
+Dev build as of Sept 7, 2025:
+https://github.com/mainsail-crew/mainsail/actions/runs/17531279593
+
+To manually update to latest devel:
+```shell
+pushd ~/tmp/mainsail-repo
+git checkout develop
+git pull
+
+npm ci
+
+npm run build
+unzip ./dist/mainsail.zip -d ~/mainsail/
+```
