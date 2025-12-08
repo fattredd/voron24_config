@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-# Schedule the print queue to start at a given time
+# Schedule the print queue to start at a given time.
+# Note that for PM schedules, use 13:00 style time
 
 set -e
 set -o pipefail
@@ -34,6 +35,6 @@ check_status() {
 echo "Creating a job to start the queue at ${start_time}"
 
 # Start the queue
-echo curl -X POST
+echo curl -X POST \
      ${MOONRAKER_URL}${QUEUE_ENDPOINT} \
      | at "${start_time}"
